@@ -26,21 +26,34 @@ body, html {
   vertical-align: top;
 }
 
-#whenButton {
+#button-and-text {
   position: absolute;
   bottom: 10%;
   left: 10%;
-  width: 10%;
-  padding: 1em;
-  font-size: 1em;
-  color: white;
-  background-color: #555;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 100;
-  opacity: 0.1;
+  display: flex;
+  align-items: center;
 }
+
+#whenButton, #text {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0;
+  margin-right: 5px; /* добавьте небольшой отступ справа от кнопки, если нужно */
+}
+
+
+#button-and-text {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  display: flex;
+  align-items: center;
+}
+
+
 
 #whenButton:hover {
   background-color: #777;

@@ -68,10 +68,3 @@ document.getElementById('whenButton').addEventListener('click', function() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-document.getElementById('whenButton').addEventListener('click', function() {
-  const messageElement = document.getElementById('message');
-  messageElement.style.display = 'block';
-  setTimeout(function() {
-    messageElement.style.display = 'none';
-  }, 2000);
-});
