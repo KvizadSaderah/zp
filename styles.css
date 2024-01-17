@@ -11,17 +11,18 @@ body, html {
 }
 
 #timer {
-  font-size: 8vw; /* Адаптивный размер шрифта */
+  font-size: 8vw;
   display: flex;
   justify-content: center;
 }
+
 .time-block {
   display: inline-block;
   margin: 0 5px;
 }
 
 .time-unit {
-  font-size: 3vw; /* Адаптивный размер шрифта для единиц времени */
+  font-size: 3vw;
   vertical-align: top;
 }
 
@@ -37,11 +38,13 @@ body, html {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 100; /* Убедитесь, что кнопка находится выше других элементов */
+  z-index: 100;
+  opacity: 0.1;
 }
 
 #whenButton:hover {
   background-color: #777;
+  opacity: 0.1;
 }
 
 #message {
@@ -57,15 +60,14 @@ body, html {
   border-radius: 25px;
   box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
   text-align: center;
-  font-size: 1em;
+  font-size: 4vw;
   z-index: 100;
   white-space: nowrap;
   overflow: hidden;
-  visibility: hidden; /* Скрыть сообщение когда анимация не активна */
+  visibility: hidden;
 }
 
-/* Анимация "новостной ленты" для сообщения */
-@keyframes newsTicker {
+@keyframes tickerAnimation {
   0%, 100% {
     transform: translateX(-50%) translateX(100vw);
     visibility: hidden;
@@ -76,35 +78,31 @@ body, html {
   }
 }
 
-/* Анимация "тряска" для сообщения */
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(-50%);
-    visibility: hidden;
+#message.ticker-animation {
+  animation: tickerAnimation 5s linear forwards;
+}
+@keyframes modernFadeIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
   }
-  10%, 90% {
-    transform: translateX(-50%) translateX(0);
-    visibility: visible;
-  }
-  20%, 80% {
-    transform: translateX(-50%) translateX(-10px);
-  }
-  30%, 70% {
-    transform: translateX(-50%) translateX(10px);
-  }
-  40%, 60% {
-    transform: translateX(-50%) translateX(-10px);
-  }
-  50% {
-    transform: translateX(-50%) translateX(10px);
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-/* Применение анимаций */
-#message.news-ticker {
-  animation: newsTicker 5s linear forwards;
+@keyframes modernFadeOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
 }
 
-#message.shake {
-  animation: shake 2s linear forwards;
+#message.modern-animation {
+  animation: modernFadeIn 0.5s ease-out, modernFadeOut 0.5s 2s ease-in forwards;
 }

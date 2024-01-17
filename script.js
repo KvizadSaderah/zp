@@ -54,15 +54,16 @@ function updateCountdown() {
   updateTimerBlock('hours', hours);
   updateTimerBlock('days', days);
 }
-
-/* Добавляем классы для разных анимаций в JavaScript */
 document.getElementById('whenButton').addEventListener('click', function() {
   const messageElement = document.getElementById('message');
-  // Удалить предыдущие классы анимации, если они есть
-  messageElement.classList.remove('news-ticker', 'shake');
-  // Добавить класс для новой анимации
-  messageElement.classList.add('news-ticker'); // Или 'shake' для тряски
+  // Для основной анимации
+  messageElement.classList.add('ticker-animation');
+  // Для современной анимации
+  // messageElement.classList.add('modern-animation');
 });
+
+
+
 // Обновление при загрузке и каждую секунду
 updateCountdown();
 setInterval(updateCountdown, 1000);
