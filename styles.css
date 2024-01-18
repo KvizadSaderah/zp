@@ -11,7 +11,7 @@ body, html {
 }
 
 #timer {
-  font-size: 14vw;
+  font-size: 12vw;
   display: flex;
   justify-content: center;
 }
