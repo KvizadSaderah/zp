@@ -44,6 +44,11 @@ body, html {
   margin-right: 5px; /* добавьте небольшой отступ справа от кнопки, если нужно */
 }
 
+#whenButton:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 
 #button-and-text {
   position: absolute;

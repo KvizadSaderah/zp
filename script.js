@@ -55,12 +55,24 @@ function updateCountdown() {
   updateTimerBlock('days', days);
 }
 document.getElementById('whenButton').addEventListener('click', function() {
+  const button = this;
   const messageElement = document.getElementById('message');
-  // Для основной анимации
+
+  // Запускаем анимацию
   messageElement.classList.add('ticker-animation');
-  // Для современной анимации
-  // messageElement.classList.add('modern-animation');
+
+  // Блокируем кнопку на 3 секунды
+  button.disabled = true;
+  setTimeout(function() {
+    button.disabled = false;
+  }, 3000);
+
+  // Сброс анимации после её завершения
+  messageElement.addEventListener('animationend', function() {
+    messageElement.classList.remove('ticker-animation');
+  });
 });
+
 
 
 
