@@ -6,7 +6,7 @@ body, html {
   justify-content: center;
   align-items: center;
   font-family: 'Arial', sans-serif;
-  background-color: #1a1a1a;
+  background-color: #070f26;
   color: #fff;
 }
 
@@ -26,23 +26,32 @@ body, html {
   vertical-align: top;
 }
 
-#button-and-text {
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
-  display: flex;
-  align-items: center;
+#button-text-box {
+  display: inline-flex; /* Элементы в одну строку с возможностью выравнивания */
+  border: 2px solid #2567db; /* Синяя граница вокруг всего блока */
+  border-radius: 5px; /* Скругление углов */
 }
 
 #whenButton, #text {
-  background-color: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-  padding: 0;
-  margin-right: 5px; /* добавьте небольшой отступ справа от кнопки, если нужно */
+  background-color: transparent; /* Прозрачный фон */
+  color: #2567db; /* Синий текст */
+  display: flex; /* Также используем flex для выравнивания текста внутри */
+  align-items: center; /* Выравнивание текста по центру */
+  justify-content: center; /* Выравнивание текста по центру */
+  margin: 0; /* Убираем внешний отступ */
+  padding: 10px 20px; /* Внутренние отступы */
+  border: none; /* Убираем рамку */
+  font-size: 1em; /* Размер шрифта */
 }
+
+#whenButton {
+  border-right: 2px solid #070f26;
+}
+
+#text {
+  border-left: 2px solid #070f26;
+}
+
 
 #whenButton:disabled {
   opacity: 0.5;
@@ -61,8 +70,8 @@ body, html {
 
 
 #whenButton:hover {
-  background-color: #777;
-  opacity: 0.1;
+  background-color: #2567db; /* Синий фон */
+  color: #ffffff; /* Белый текст */
 }
 
 #message {
@@ -71,14 +80,14 @@ body, html {
   left: 50%;
   transform: translateX(-50%);
   max-width: 80%;
-  padding: 1em;
+  padding: 0.5em;
   background-color: black;
   color: white;
-  border: 2px solid white;
+  border: 2px solid #2567db;
   border-radius: 25px;
   box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
   text-align: center;
-  font-size: 4vw;
+  font-size: 2vw;
   z-index: 100;
   white-space: nowrap;
   overflow: hidden;
