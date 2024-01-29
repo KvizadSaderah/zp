@@ -32,7 +32,7 @@ body, html {
   border-radius: 5px; /* Скругление углов */
 }
 
-#whenButton, #text {
+#whenButton {
   background-color: transparent; /* Прозрачный фон */
   color: #2567db; /* Синий текст */
   display: flex; /* Также используем flex для выравнивания текста внутри */
@@ -45,12 +45,23 @@ body, html {
 }
 
 #whenButton {
-  border-right: 2px solid #070f26;
+  background-color: transparent; /* Прозрачный фон */
+  color: #2567db; /* Синий текст */
+  display: flex; /* Используем flex для выравнивания текста внутри */
+  align-items: center; /* Выравнивание текста по центру */
+  justify-content: center; /* Выравнивание текста по центру */
+  margin: 0; /* Убираем внешний отступ */
+  padding: 10px 20px; /* Внутренние отступы */
+  border: 2px solid #2567db; /* Белая граница */
+  font-size: 1em; /* Размер шрифта */
+  border-radius: 5px; /* Скругление углов */
 }
 
-#text {
-  border-left: 2px solid #070f26;
+#whenButton:hover {
+  background-color: #2567db; /* Синий фон */
+  color: #2567db; /* Белый текст */
 }
+
 
 
 #whenButton:disabled {
@@ -68,11 +79,6 @@ body, html {
 }
 
 
-
-#whenButton:hover {
-  background-color: #2567db; /* Синий фон */
-  color: #ffffff; /* Белый текст */
-}
 
 #message {
   position: fixed;
