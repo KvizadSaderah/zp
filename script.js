@@ -1,6 +1,36 @@
+// Проверка, является ли дата российским праздником
+function isRussianHoliday(date) {
+  const month = date.getMonth();
+  const day = date.getDate();
+
+  // Новогодние каникулы (1-8 января)
+  if (month === 0 && day >= 1 && day <= 8) return true;
+
+  // День защитника Отечества (23 февраля)
+  if (month === 1 && day === 23) return true;
+
+  // Международный женский день (8 марта)
+  if (month === 2 && day === 8) return true;
+
+  // Праздник Весны и Труда (1 мая)
+  if (month === 4 && day === 1) return true;
+
+  // День Победы (9 мая)
+  if (month === 4 && day === 9) return true;
+
+  // День России (12 июня)
+  if (month === 5 && day === 12) return true;
+
+  // День народного единства (4 ноября)
+  if (month === 10 && day === 4) return true;
+
+  return false;
+}
+
 function getLastWorkdayOfMonth(year, month) {
   let lastDay = new Date(year, month + 1, 0);
-  while (lastDay.getDay() === 0 || lastDay.getDay() === 6) {
+  // Пропускаем выходные и праздники
+  while (lastDay.getDay() === 0 || lastDay.getDay() === 6 || isRussianHoliday(lastDay)) {
     lastDay.setDate(lastDay.getDate() - 1);
   }
   return new Date(year, month, lastDay.getDate(), 11); // Возвращаем 11 утра
