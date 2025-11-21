@@ -3,7 +3,7 @@ function getLastWorkdayOfMonth(year, month) {
   while (lastDay.getDay() === 0 || lastDay.getDay() === 6) {
     lastDay.setDate(lastDay.getDate() - 1);
   }
-  return new Date(year, lastDay.getMonth(), lastDay.getDate(), 11); // Возвращаем 11 утра
+  return new Date(year, month, lastDay.getDate(), 11); // Возвращаем 11 утра
 }
 
 function getNextTargetDate() {
