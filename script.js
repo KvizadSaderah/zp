@@ -1,28 +1,34 @@
-// Проверка, является ли дата российским праздником
-function isRussianHoliday(date) {
+// Проверка, является ли дата болгарским праздником
+function isBulgarianHoliday(date) {
   const month = date.getMonth();
   const day = date.getDate();
 
-  // Новогодние каникулы (1-8 января)
-  if (month === 0 && day >= 1 && day <= 8) return true;
+  // Новый год (1 января)
+  if (month === 0 && day === 1) return true;
 
-  // День защитника Отечества (23 февраля)
-  if (month === 1 && day === 23) return true;
+  // День Освобождения Болгарии (3 марта)
+  if (month === 2 && day === 3) return true;
 
-  // Международный женский день (8 марта)
-  if (month === 2 && day === 8) return true;
-
-  // Праздник Весны и Труда (1 мая)
+  // День труда (1 мая)
   if (month === 4 && day === 1) return true;
 
-  // День Победы (9 мая)
-  if (month === 4 && day === 9) return true;
+  // День святых Кирилла и Мефодия (24 мая)
+  if (month === 4 && day === 24) return true;
 
-  // День России (12 июня)
-  if (month === 5 && day === 12) return true;
+  // День Соединения (6 сентября)
+  if (month === 8 && day === 6) return true;
 
-  // День народного единства (4 ноября)
-  if (month === 10 && day === 4) return true;
+  // День Независимости (22 сентября)
+  if (month === 8 && day === 22) return true;
+
+  // День болгарских будителей (1 ноября)
+  if (month === 10 && day === 1) return true;
+
+  // Сочельник (24 декабря)
+  if (month === 11 && day === 24) return true;
+
+  // Рождество (25-26 декабря)
+  if (month === 11 && (day === 25 || day === 26)) return true;
 
   return false;
 }
@@ -30,7 +36,7 @@ function isRussianHoliday(date) {
 function getLastWorkdayOfMonth(year, month) {
   let lastDay = new Date(year, month + 1, 0);
   // Пропускаем выходные и праздники
-  while (lastDay.getDay() === 0 || lastDay.getDay() === 6 || isRussianHoliday(lastDay)) {
+  while (lastDay.getDay() === 0 || lastDay.getDay() === 6 || isBulgarianHoliday(lastDay)) {
     lastDay.setDate(lastDay.getDate() - 1);
   }
   return new Date(year, month, lastDay.getDate(), 11); // Возвращаем 11 утра
